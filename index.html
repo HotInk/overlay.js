@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Overaly.js</title>
+	<script src="javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascripts/effects.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascripts/builder.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script src="javascripts/overlay.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	
+	<style type="text/css" media="screen">
+		body { background-color: #F9F9F9; color: #333; margin: 0 auto; padding: 0px 5px; }
+
+		body, p, ol, ul, td {
+		  font-family: 'Helvetica Neue', verdana, arial, helvetica, sans-serif;
+		  font-size:   12px;
+		  line-height: 16px;
+		}
+
+		pre {
+		  background-color: #eee;
+		  padding: 10px;
+		  font-size: 11px;
+		}
+
+		p { width: 50em;}	
+
+		/* Overlay CSS below */
+		#overlay{ position: absolute; top: 0; left: 0; z-index: 900; width: 100%; height: 500px; background-color: #000; }
+		#overlaybox{ position: absolute; left: 0; width: 100%; z-index: 1000; text-align: center; line-height: 0; }
+		#loading{ position: absolute; top: 40%; left: 0%; height: 25%; z-index: 1001;width: 100%; text-align: center; line-height: 0;}
+		#overlay_container{ position: relative; background-color: #fff; width: 250px; height: 250px; margin: 0 auto;}
+		
+	</style>
+	
+	<body>
+		<h1>Overlay.js - A simple demonstration</h1>
+		<p>Overlay.js is a simple javascript class for inserting content over the page in a lightbox-style page overlay.Usage is simple. Create an instance of the overlay, then call overlay_instance.render(content_for_overlay).</p>
+		<p>Click on the button below to test it out.</p>
+		<p><button onclick="overlay.render(test_element);">Click me to test overlay.js</button></p>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		overlay = new Overlay();
+		var test_element = Builder.node('div',{id:'test_content', href: '#' }, [Builder.node('img', {src: '800px-TorontoSkyline.jpg'}), Builder.node('p', "The beautiful Toronto skyline, courtesy of Wikimedia Commons.")]  );
+	</script>
+	
+</html>
